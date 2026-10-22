@@ -31,8 +31,9 @@ repos:
 
 ## markdown-table-format
 
-Aligns GFM pipe tables: every column is as wide as its longest cell, padded with one space on
-each side, and the separator row is filled with dashes.
+Aligns [GFM](https://github.github.com/gfm/#tables-extension-) pipe tables: every column is as
+wide as its longest cell, padded with one space on each side, and the separator row is filled with
+dashes.
 
 ```markdown
 | Title                 | Director        | Year | Watched |
