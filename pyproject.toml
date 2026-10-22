@@ -1,0 +1,98 @@
+[project]
+name = "pawelch-pre-commit-hooks"
+version = "0.1.0"
+description = "Git hooks for pre-commit and prek."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Paweł Chojnowski", email = "pawel.chojnowski@live.com" },
+]
+requires-python = ">=3.11"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+]
+
+[project.urls]
+Repository = "https://github.com/pawel-ch/pre-commit-hooks"
+
+[build-system]
+requires = ["uv_build>=0.9,<0.10"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "prek",
+    "pytest",
+]
+
+[tool.ruff]
+indent-width = 4
+line-length = 150
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "auto"
+quote-style = "double"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+allowed-confusables = ["’", "–"]
+ignore = [
+    "C408",  # do not force {} instead of dict()
+    "S404",  # subprocess module is possibly insecure – this is counterproductive
+    "S608",  # hardcoded-sql-expression – false positive for SqlAlchemy binding
+    "S603",  # subprocess-without-shell-equals-true – this is broken
+]
+select = [
+    "A",
+    "ARG",
+    "B",
+    "C4",
+    "C90",
+    "COM",
+    "DJ",
+    "DTZ",
+    "E",
+    "F",
+    "FBT",
+    "FLY",
+    "FURB",
+    "G",
+    "I",
+    "INP",
+    "ISC",
+    "LOG",
+    "N",
+    "PERF",
+    "PIE",
+    "PL",   # Pylint
+    "PT",
+    "PTH",
+    "PYI",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "S",
+    "SIM",
+    "SLF",
+    "T20",
+    "TC",
+    "TRY",
+    "UP",
+    "W",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**.py" = ["ARG", "S", "INP"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+known-first-party = ["pawelch_pre_commit_hooks"]
+relative-imports-order = "closest-to-furthest"
