@@ -31,3 +31,15 @@ hooks = [
     args = ["--preview"]
   }
 ]
+
+[[repos]]
+repo = "local"
+hooks = [
+  {
+    id = "markdown-table-format",
+    name = "format Markdown tables",
+    entry = "uv run markdown-table-format",
+    language = "system",
+    types = ["markdown"]
+  }
+]
