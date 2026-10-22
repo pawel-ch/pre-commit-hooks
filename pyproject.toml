@@ -21,6 +21,9 @@ classifiers = [
 [project.urls]
 Repository = "https://github.com/pawel-ch/pre-commit-hooks"
 
+[project.scripts]
+markdown-table-format = "pawelch_pre_commit_hooks.markdown_table_format.cli:main"
+
 [build-system]
 requires = ["uv_build>=0.9,<0.10"]
 build-backend = "uv_build"

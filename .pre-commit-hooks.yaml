@@ -1,0 +1,6 @@
+- id: markdown-table-format
+  name: format Markdown tables
+  description: Align Markdown table columns PyCharm-style (every column as wide as its longest cell).
+  entry: markdown-table-format
+  language: python
+  types: [markdown]
