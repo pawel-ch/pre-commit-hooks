@@ -56,6 +56,12 @@ uv run pytest
 uv run prek run --all-files
 ```
 
+Run the tests against every supported Python version:
+
+```bash
+for v in 3.11 3.12 3.13 3.14 3.15; do uv run --isolated --python $v pytest -q; done
+```
+
 ## License
 
 [MIT](LICENSE)
